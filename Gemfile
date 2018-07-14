@@ -37,13 +37,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'awesome_print'
-gem 'aws-sdk'
 gem 'dotenv'
 gem 'dotenv-rails'
-gem 'geocoder'
 gem 'httparty'
 gem 'nokogiri'
-gem 'parser'
 gem 'puma_worker_killer'
 gem "rubycritic"
 gem 'sassc-rails'
@@ -57,13 +54,11 @@ gem "font-awesome-sass"
 gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'rails_best_practices'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug',         platforms: [:mri,  :mingw,  :x64_mingw]
   gem 'hirb'
-  gem 'bullet'
   gem 'guard-cucumber'
   gem 'pronto'
   gem 'pronto-rubocop'
@@ -83,7 +78,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
-  gem "binding_of_caller"
   gem "rack-livereload"
 end
 
@@ -95,9 +89,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem "capybara-webkit",    require: false
-  gem "formulaic"
-  gem "shoulda-matchers"
-  gem "webmock"
   gem "database_cleaner"
   gem 'simplecov',          require: false
   gem "rspec-rails"
