@@ -45,14 +45,12 @@ gem 'httparty'
 gem 'nokogiri'
 gem 'parser'
 gem 'puma_worker_killer'
-gem 'rest-client'
 gem "rubycritic"
 gem 'sassc-rails'
 gem 'sdoc',                 group: :doc
 gem 'slim'
 gem 'slim-rails'
 gem 'therubyracer',         platforms: :ruby
-gem 'write_xlsx'
 gem 'rack-canonical-host'
 # assets
 gem "font-awesome-sass"
@@ -67,9 +65,6 @@ group :development, :test do
   gem 'hirb'
   gem 'bullet'
   gem 'guard-cucumber'
-  gem "launchy"
-  gem 'parallel_tests'
-  gem 'percy-capybara'
   gem 'pronto'
   gem 'pronto-rubocop'
   gem 'pronto-slim'
@@ -93,6 +88,12 @@ group :development do
 end
 
 group :test do
+  gem 'db-query-matchers'
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15', '< 4.0'
+  gem 'selenium-webdriver'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
   gem "capybara-webkit",    require: false
   gem "formulaic"
   gem "shoulda-matchers"
@@ -102,14 +103,7 @@ group :test do
   gem "rspec-rails"
   gem 'cucumber-rails',     :require => false
   gem 'factory_girl_rails'
-  gem 'thin' # for stripe mock server
-  gem 'guard-rspec', require: false  # zeus 0.15.4
-  gem 'db-query-matchers'
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'guard-rspec', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
