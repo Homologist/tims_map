@@ -1,3 +1,6 @@
+[![Inline docs](http://inch-ci.org/github/Homologist/tims_map.svg?branch=master)](http://inch-ci.org/github/Homologist/tims_map)
+[![Coverage Status](https://coveralls.io/repos/github/Homologist/tims_map/badge.svg?branch=master)](https://coveralls.io/github/Homologist/tims_map?branch=master)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
