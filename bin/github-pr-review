@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+if [ "$CIRCLE_BRANCH" != "master" ]; then
+  # Get the reference of the active Pull Request
+  GH_TRACE="$(git ls-remote -q origin pull\*\head | grep $CIRCLE_SHA1)"
+
+  # Get the id of the active Pull Request
+  PULL_REQUEST_ID="$(echo $GH_TRACE | sed 's/.*refs\/pull\/\([0-9]*\)\/head/\1/g')"
+
+  # fetch the last version of the repo
+  git fetch origin master:refs/remotes/origin/master
+
+  # launch pronto
+  echo github_pr_review
+  bundle exec pronto run -f github_pr -c origin/master
+fi

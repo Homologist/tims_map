@@ -49,10 +49,6 @@ GEM
     arel (9.0.0)
     ast (2.4.0)
     awesome_print (1.8.0)
-    axiom-types (0.1.1)
-      descendants_tracker (~> 0.0.4)
-      ice_nine (~> 0.11.0)
-      thread_safe (~> 0.3, >= 0.3.1)
     backports (3.11.3)
     better_errors (2.4.0)
       coderay (>= 1.0.0)
@@ -78,11 +74,7 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
-    codeclimate-engine-rb (0.4.1)
-      virtus (~> 1.0)
     coderay (1.1.2)
-    coercible (1.0.0)
-      descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -124,17 +116,13 @@ GEM
     db-query-matchers (0.9.0)
       activesupport (>= 4.0, <= 6.0)
       rspec (~> 3.0)
-    descendants_tracker (0.0.4)
-      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.3)
     docile (1.3.1)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
       railties (>= 3.2, < 6.0)
-    equalizer (0.0.11)
     erubi (1.7.1)
-    erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.9.0)
       activesupport (>= 3.0.0)
@@ -144,11 +132,6 @@ GEM
     faraday (0.15.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
-    flay (2.12.0)
-      erubis (~> 2.7.0)
-      path_expander (~> 1.0)
-      ruby_parser (~> 3.0)
-      sexp_processor (~> 4.0)
     flog (4.6.2)
       path_expander (~> 1.0)
       ruby_parser (~> 3.1, > 3.1.0)
@@ -160,9 +143,9 @@ GEM
     formatador (0.2.5)
     get_process_mem (0.2.2)
     gherkin (5.1.0)
-    gitlab (3.6.1)
-      httparty
-      terminal-table
+    gitlab (4.4.0)
+      httparty (>= 0.14.0)
+      terminal-table (>= 1.5.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     guard (2.14.2)
@@ -188,7 +171,6 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    ice_nine (0.11.2)
     inch (0.8.0)
       pry
       sparkr (>= 0.2.0)
@@ -207,8 +189,6 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (2.1.0)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -252,17 +232,16 @@ GEM
       ast (~> 2.4.0)
     path_expander (1.0.3)
     powerpack (0.1.2)
-    pronto (0.6.0)
-      gitlab (~> 3.6, >= 3.4.0)
-      octokit (~> 4.3, >= 4.1.0)
+    pronto (0.9.5)
+      gitlab (~> 4.0, >= 4.0.0)
+      httparty (>= 0.13.7)
+      octokit (~> 4.7, >= 4.7.0)
+      rainbow (~> 2.1)
       rugged (~> 0.24, >= 0.23.0)
       thor (~> 0.19.0)
-    pronto-rubocop (0.6.2)
-      pronto (~> 0.6.0)
-      rubocop (~> 0.38, >= 0.35.0)
-    pronto-slim (0.1.2)
-      pronto (~> 0.6.0)
-      slim_lint (~> 0.8.2)
+    pronto-rubocop (0.9.1)
+      pronto (~> 0.9.0)
+      rubocop (~> 0.50, >= 0.49.1)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -303,16 +282,13 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rainbow (3.0.0)
+    rainbow (2.2.2)
+      rake
     rake (11.3.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (6.0.4)
-    reek (4.8.2)
-      codeclimate-engine-rb (~> 0.4.0)
-      parser (>= 2.5.0.0, < 2.6)
-      rainbow (>= 2.0, < 4.0)
     ref (2.0.0)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
@@ -335,10 +311,10 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubocop (0.58.1)
+    rubocop (0.57.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5, != 2.5.1.1)
+      parser (>= 2.5)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
@@ -347,16 +323,6 @@ GEM
     ruby_dep (1.5.0)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
-    rubycritic (3.4.0)
-      flay (~> 2.8)
-      flog (~> 4.4)
-      launchy (= 2.4.3)
-      parser (~> 2.5.0)
-      rainbow (~> 3.0)
-      reek (~> 4.4)
-      ruby_parser (~> 3.8)
-      tty-which (~> 0.3.0)
-      virtus (~> 1.0)
     rubyzip (1.2.1)
     rugged (0.27.2)
     sass (3.5.6)
@@ -402,11 +368,6 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
-    slim_lint (0.8.3)
-      rake (>= 10, < 12)
-      rubocop (>= 0.36.0)
-      slim (~> 3.0)
-      sysexits (~> 1.1)
     sparkr (0.4.1)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -421,7 +382,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    sysexits (1.2.0)
     temple (0.8.0)
     term-ansicolor (1.6.0)
       tins (~> 1.0)
@@ -434,7 +394,6 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     tins (1.16.3)
-    tty-which (0.3.0)
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
@@ -443,11 +402,6 @@ GEM
     uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
-    virtus (1.0.5)
-      axiom-types (~> 0.1)
-      coercible (~> 1.0)
-      descendants_tracker (~> 0.0, >= 0.0.3)
-      equalizer (~> 0.0, >= 0.0.9)
     web-console (3.6.2)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -493,16 +447,16 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   nokogiri
   overcommit
-  pronto
+  pronto (>= 0.9.5)
   pronto-rubocop
-  pronto-slim
   puma (~> 3.11)
   puma_worker_killer
   rack-canonical-host
   rack-livereload
   rails (~> 5.2.0)
+  rainbow (~> 2.2.2)
   rspec-rails
-  rubycritic
+  rubocop (~> 0.57.1)
   sass-rails (~> 5.0)
   sassc-rails
   sdoc
@@ -510,7 +464,6 @@ DEPENDENCIES
   simplecov
   slim
   slim-rails
-  slim_lint
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
@@ -521,7 +474,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.2

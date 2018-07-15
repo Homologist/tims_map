@@ -1,0 +1,6 @@
+github:  
+  slug: Homologist/tims_map
+github_pr_review:
+  format: "%{msg}"
+max_warnings: 50
+verbose: false
