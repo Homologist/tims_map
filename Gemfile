@@ -42,6 +42,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'awesome_print'
 gem 'dotenv'
 gem 'dotenv-rails'
+gem 'gmaps4rails'
 gem 'httparty'
 gem 'nokogiri'
 gem 'puma_worker_killer'
@@ -51,6 +52,7 @@ gem 'sdoc', group: :doc
 gem 'slim'
 gem 'slim-rails'
 gem 'therubyracer', platforms: :ruby
+gem 'underscore-rails'
 
 # assets
 gem 'font-awesome-rails'
