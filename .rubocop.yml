@@ -1,2 +1,13 @@
 Metrics/LineLength:
   Max: 120
+
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+      - 'vendor/*'
+      - 'test/*'
+      - 'doc/*'
+      - 'lib/*'
+      - 'spec/*'
+      - 'db/**/*'
+      - 'config/**/*'
