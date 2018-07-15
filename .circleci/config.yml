@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-       - image: circleci/ruby:2.5.1-node-browsers
+       - image: circleci/ruby:2.5.0-node-browsers
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -32,6 +32,11 @@ jobs:
             sudo apt-get install cmake
             sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - run:
+          name: rubocop
+          command: |
+            bin/github-pr-review
 
       - save_cache:
           paths:
