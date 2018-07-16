@@ -6,6 +6,7 @@ require 'cucumber/rails'
 require 'etc'
 require 'pp'
 
+require 'cucumber/rspec/doubles'
 require 'capybara/poltergeist'
 Capybara.register_driver :poltergeist do |app|
   options = {
