@@ -91,7 +91,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
-  gem "poltergeist"
+  gem 'poltergeist'
   gem 'capybara-webkit', require: false
   gem 'cucumber-rails',  require: false
   # Easy installation and use of chromedriver to run system tests with Chrome
@@ -99,7 +99,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'guard-rspec', require: false
-  gem "phantomjs", require: 'phantomjs/poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false

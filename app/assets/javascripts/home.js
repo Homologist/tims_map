@@ -13,6 +13,7 @@ function loadMap(hash) {
   };
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
+    console.log(marker_list);
     markers = handler.addMarkers(marker_list);
     handler.bounds.extendWith(markers);
   })

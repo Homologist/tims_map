@@ -7,6 +7,7 @@ Then("I see the disruptions on the road") do
   # expect(Map.start(markers).loaded_marker).to eq(markers.count)
   lat = 51.509865
   lng = -0.118092
+
   ACCEPTED_OFFSET = 0.2
   expect(page).to have_css '#map .gm-style'
   center_lat = page.evaluate_script('handler.getMap().getCenter().lat()')
@@ -15,4 +16,8 @@ Then("I see the disruptions on the road") do
   page.evaluate_script("window.location.reload()")
   center_lng = page.evaluate_script('handler.getMap().getCenter().lng()')
   expect(center_lng).to be_within(ACCEPTED_OFFSET).of(lng.to_f)
+
+  page.evaluate_script("window.location.reload()")
+  list_lat = page.evaluate_script('handler.getMap().getBounds().f').values
+  expect(list_lat.count).to eq(2)
 end
