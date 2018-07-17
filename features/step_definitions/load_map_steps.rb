@@ -10,7 +10,7 @@ end
 Then("I see the disruptions on the road") do
   ACCEPTED_OFFSET = 0.2
   expect(page).to have_css '#map .gm-style'
-  byebug
+
   center_lat = page.evaluate_script('map.getCenter().lat()')
   expect(center_lat).to be_within(ACCEPTED_OFFSET).of(@lat.to_f)
 
