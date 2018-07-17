@@ -31,3 +31,6 @@
 
 # Ignore  coverage directory.
 /coverage/*
+
+# keys
+.env
