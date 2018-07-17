@@ -9,12 +9,12 @@ class TimsNotificationsChannel < ApplicationCable::Channel
 
   def receive(data)
     @disruptions = Tims.new.get_disruptions
-    @hash = Gmaps4rails.build_markers(@disruptions) do |disruption, marker|
+    @hash_list = Gmaps4rails.build_markers(@disruptions) do |disruption, marker|
       marker.lat disruption.latitude
       marker.lng disruption.longitude
     end
-    @hash[0..2].each do |a|
-      ActionCable.server.broadcast "tims_notifications_channel", message: a
+    @hash_list.each do |disruption|
+      ActionCable.server.broadcast "tims_notifications_channel", message: disruption
       sleep(0.1)
     end
   end
