@@ -5,8 +5,8 @@
 //= require gmaps/google
 
 function loadMap() {
-  var lat = 51.509865
-  var lng = -0.118092
+  lat = 51.509865
+  lng = -0.118092
   var mapOptions = {
     center: new google.maps.LatLng(lat, lng),
     zoom: 10

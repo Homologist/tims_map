@@ -2,7 +2,7 @@
 
 # Service who call TIMS API
 class Tims
-  def get_disruptions
+  def disruptions
     download_and_filter_disruption.map do |disruption|
       Disruption.new(*disruption['CauseArea']['DisplayPoint']['Point']['coordinatesLL'].split(',').map(&:to_f))
     end

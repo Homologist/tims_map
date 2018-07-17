@@ -12,8 +12,8 @@ RSpec.describe Tims do
 
     allow(HTTParty).to receive(:get).with('https://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml?app_id=&app_key=').and_return(disruption_stub)
 
-    expect(Tims.new.get_disruptions.count).to eq(1)
-    expect(Tims.new.get_disruptions.first.latitude).to eq(lng)
-    expect(Tims.new.get_disruptions.first.longitude).to eq(lat)
+    expect(Tims.new.disruptions.count).to eq(1)
+    expect(Tims.new.disruptions.first.latitude).to eq(lng)
+    expect(Tims.new.disruptions.first.longitude).to eq(lat)
   end
 end
