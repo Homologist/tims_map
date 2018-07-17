@@ -2,5 +2,5 @@ div style=("width: 800px;")
   #map style=("width: 800px; height: 400px;")
 
 javascript:
-  marker_list = #{raw(@hash.to_json)}
   google.maps.event.addDomListener(window, "load", loadMap);
+  $(document).on("turbolinks:load", function(){App.tims_notifications});

@@ -4,7 +4,7 @@
 //= require underscore
 //= require gmaps/google
 
-function loadMap(hash) {
+function loadMap() {
   var lat = 51.509865
   var lng = -0.118092
   var mapOptions = {
@@ -12,9 +12,15 @@ function loadMap(hash) {
     zoom: 10
   };
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(marker_list);
-    handler.bounds.extendWith(markers);
-  })
+  handler.buildMap({ provider: mapOptions, internal: {id: 'map'}}, function(){});
+  map = handler.getMap();
 }
 
+function loadMarker(list) {
+  hash = list["message"]
+  marker = new google.maps.Marker({
+    map: map,
+    position: hash
+  });
+  marker.setMap(map)
+}
