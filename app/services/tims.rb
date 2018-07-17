@@ -4,7 +4,7 @@
 class Tims
 
   def get_disruptions
-    download_and_filter_disruption.map{ |disruption| Disruption.new(*first_divided(disruption["CauseArea"]["DisplayPoint"]["Point"].values)) }
+    download_and_filter_disruption.map{ |disruption| Disruption.new(*disruption["CauseArea"]["DisplayPoint"]["Point"]["coordinatesLL"].split(",").map(&:to_f)) }
   end
 
   def download_and_filter
@@ -21,7 +21,4 @@ class Tims
     download_xml["Root"]["Disruptions"]["Disruption"]
   end
 
-  def first_divided(list)
-    [list.first.to_f / 10000, list.second.to_f]
-  end
 end
