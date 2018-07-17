@@ -4,10 +4,16 @@ require 'rails_helper'
 
 RSpec.describe Tims do
   it 'get disruptions' do
-    # disruption  = double("disruption")
-    # disruptions = [disruption, disruption]
-    # HTTparty.stub(:get) {disruptions}
-    # expect(Tims.get_disruptions).to eq(disruptions.count)
-    expect(true).to eq(true)
+    lat  = 10.0001
+    lng  = -1.0001
+
+    disruption_list = Fixture.disruption
+    disruption_stub = double(parsed_response: disruption_list)
+
+    allow(HTTParty).to receive(:get).with('https://data.tfl.gov.uk/tfl/syndication/feeds/tims_feed.xml?app_id=&app_key=').and_return(disruption_stub)
+
+    expect(Tims.new.get_disruptions.count).to eq(1)
+    expect(Tims.new.get_disruptions.first.latitude).to eq(lng)
+    expect(Tims.new.get_disruptions.first.longitude).to eq(lat)
   end
 end
